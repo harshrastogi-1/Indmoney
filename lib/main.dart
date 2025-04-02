@@ -89,12 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 int first = random.nextInt(81);
-                value.add(first);
                 int second;
                 do {
                   second = random.nextInt(81);
                 } while (second == first);
-                value.add(second);
+                value[0] = first;
+                value[1] = second;
                 suggestionRook.clear();
                 suggestionBishop.clear();
                 showSuggestion(value.first, [
